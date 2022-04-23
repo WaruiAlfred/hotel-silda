@@ -1,0 +1,74 @@
+@import "../../abstracts/variables";
+
+.footer {
+  background-color: black;
+  grid-column: 1 / -1;
+  grid-row: footer-start / footer-end;
+  padding: 4rem;
+
+  &__content {
+    columns: 2;
+    column-gap: auto;
+    column-rule: 0.6px solid $color-grey-light-3;
+  }
+
+  &__features {
+    padding: 3rem;
+
+    ul {
+      list-style: none;
+
+      li {
+        font-size: 2rem;
+      }
+    }
+
+    &-link {
+      text-decoration: none;
+      color: currentColor;
+      transition: all .2s;
+
+      &:hover {
+        text-decoration: underline;
+        color: $color-primary;
+        transform: translateY(-3px);
+      }
+    }
+  }
+
+  &__contact {
+    padding: 4rem;
+
+    &-icons{
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    &-icon{
+      height: 3rem;
+      width: 3rem;
+      fill: $color-grey-light-3;
+      margin-top: 1.5rem;
+
+      &:not(:last-child){
+        margin-right: 2rem;
+      }
+    }
+  }
+}
+
+.copyright {
+  display: grid;
+  grid-template-columns: 1fr max-content 1fr;
+  grid-column-gap: 1.5rem;
+  align-items: center;
+  transform: translateY(50%);
+
+  &::before,
+  &::after {
+    content: "";
+    height: 1px;
+    display: block;
+    background-color: currentColor;
+  }
+}

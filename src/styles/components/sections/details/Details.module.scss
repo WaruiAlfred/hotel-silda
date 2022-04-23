@@ -1,0 +1,13 @@
+@import '../../../abstracts/variables';
+
+.details{
+  grid-row: details-start / details-end;
+  grid-column: 1 / -1;
+  font-size: 2.3rem;
+  line-height: 1.2;
+  padding: 2rem;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(30rem,1fr));
+  grid-gap: 3rem;
+}

@@ -1,0 +1,8 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(8, [col-start] minmax(min-content,1fr) [col-end]);
+  grid-template-rows:
+    [header-start] 95vh [header-end details-start]
+    minmax(80vh,1fr) [details-end gallery-start] minmax(min-content,max-content) [gallery-end footer-start]
+    minmax(40vh,60vh) [footer-end];
+}

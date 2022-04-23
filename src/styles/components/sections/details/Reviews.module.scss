@@ -1,0 +1,82 @@
+@import "../../../abstracts/variables";
+
+.reviews {
+  // grid-column: 2 / 3;
+  justify-self: center;
+
+  &__btn {
+    border: none;
+    border-radius: 30px;
+    padding: 0.8rem;
+    background-color: $color-primary-light;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  &__btn:hover {
+    background-color: $color-primary;
+    transform: translateY(-3px);
+    color: #fff;
+  }
+}
+
+.review {
+  background-color: #fff;
+  max-width: 50rem;
+  margin: 3rem 0;
+  box-shadow: 0 2rem 4rem $color-grey-dark-3;
+  border-radius: 3px;
+  padding: 2rem;
+
+  &__text {
+    font-style: italic;
+    position: relative;
+    z-index: 10;
+  }
+
+  &__user {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+
+    &-box {
+      display: flex;
+    }
+
+    &-name {
+      margin-right: 1.7rem;
+      font-weight: bold;
+    }
+
+    &-date {
+      color: $color-primary;
+      font-size: 2rem;
+    }
+  }
+
+  &__photo {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+  }
+
+  &__rating {
+    color: #fff;
+    background-color: $color-primary;
+    padding: 1.6rem;
+    border-bottom-left-radius: 40px;
+  }
+}
+
+.review::before {
+  content: "\201C";
+  position: absolute;
+  z-index: 1;
+  font-size: 20rem;
+  // top: -2.75rem;
+  // left: 2rem;
+  color: $color-grey-light-3;
+  font-family: sans-serif;
+  margin-top: -7rem;
+  margin-left: -2rem;
+}
