@@ -35,12 +35,42 @@ function Footer() {
         <div className={styles["footer__contact"]}>
           <h5>Contact Us</h5>
           <div className={styles["footer__contact-icons"]}>
-            <UseSvg className={styles["footer__contact-icon"]} iconName="twitter-with-circle" />
-            <UseSvg className={styles["footer__contact-icon"]} iconName="facebook" />
-            <UseSvg className={styles["footer__contact-icon"]} iconName="instagram-with-circle" />
-            <UseSvg className={styles["footer__contact-icon"]} iconName="behance" />
-            <UseSvg className={styles["footer__contact-icon"]} iconName="linkedin-with-circle" />
-            <UseSvg className={styles["footer__contact-icon"]} iconName="whatsapp" />
+            <Link to="#" className={styles["footer__contact-link"]}>
+              <UseSvg
+                className={styles["footer__contact-icon"]}
+                iconName="twitter-with-circle"
+              />
+            </Link>
+            <Link to="#" className={styles["footer__contact-link"]}>
+              <UseSvg
+                className={styles["footer__contact-icon"]}
+                iconName="facebook"
+              />
+            </Link>
+            <Link to="#" className={styles["footer__contact-link"]}>
+              <UseSvg
+                className={styles["footer__contact-icon"]}
+                iconName="instagram-with-circle"
+              />
+            </Link>
+            <Link to="#" className={styles["footer__contact-link"]}>
+              <UseSvg
+                className={styles["footer__contact-icon"]}
+                iconName="behance"
+              />
+            </Link>
+            <Link to="#" className={styles["footer__contact-link"]}>
+              <UseSvg
+                className={styles["footer__contact-icon"]}
+                iconName="linkedin-with-circle"
+              />
+            </Link>
+            <Link to="#" className={styles["footer__contact-link"]}>
+              <UseSvg
+                className={styles["footer__contact-icon"]}
+                iconName="whatsapp"
+              />
+            </Link>
           </div>
         </div>
       </div>

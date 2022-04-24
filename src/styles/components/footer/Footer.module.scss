@@ -26,7 +26,7 @@
     &-link {
       text-decoration: none;
       color: currentColor;
-      transition: all .2s;
+      transition: all 0.2s;
 
       &:hover {
         text-decoration: underline;
@@ -38,20 +38,29 @@
 
   &__contact {
     padding: 4rem;
+    transition: all 0.2s;
 
-    &-icons{
+    &-icons {
       display: flex;
       flex-wrap: wrap;
     }
 
-    &-icon{
+    &-link {
+      margin-top: 1.5rem;
+
+      &:not(:last-child) {
+        margin-right: 2rem;
+      }
+    }
+
+    &-icon {
       height: 3rem;
       width: 3rem;
       fill: $color-grey-light-3;
-      margin-top: 1.5rem;
 
-      &:not(:last-child){
-        margin-right: 2rem;
+      &:hover {
+        transform: translateY(-4px);
+        fill: $color-primary-light;
       }
     }
   }
