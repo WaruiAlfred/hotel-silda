@@ -1,17 +1,41 @@
 import React from "react";
-import Popup from "reactjs-popup";
-import "reactjs-popup/dist/index.css";
 import styles from "../../styles/components/header/BookRoom.module.scss";
 
-function BookRoom() {
+function BookRoom({ closeModal }) {
   return (
-    <Popup
-      trigger={<button> Trigger</button>}
-      position="center"
+    <div
       className={styles.popup}
+      onClick={() => {
+        closeModal(false);
+      }}
     >
-      <div>Popup content here !!</div>
-    </Popup>
+      <div className={styles["popup__container"]}>
+        <div className={styles["popup__close-btn"]}>
+          <button
+            onClick={() => {
+              closeModal(false);
+            }}
+          >
+            &times;
+          </button>
+        </div>
+        <div className={styles["popup__title"]}>
+          <h1>Book a Room</h1>
+        </div>
+        <div className={styles["popup__body"]}>
+          <p>4 rooms left</p>
+        </div>
+        <div className={styles["popup__footer"]}>
+          <button
+            onClick={() => {
+              closeModal(false);
+            }}
+          >
+            Cancel
+          </button>
+        </div>
+      </div>
+    </div>
   );
 }
 
