@@ -9,6 +9,7 @@ import BookRoom from "./BookRoom";
 
 function Header() {
   const [userMenuVisibility, setUserMenuVisibility] = useState(false);
+  const [bookingModal, setBookingModal] = useState(false);
   const user = useSelector((state) => state.auth.user);
 
   const userMenuHandler = () => {
@@ -62,7 +63,16 @@ function Header() {
         )}
       </div>
       <h1 className={styles.title}>Hotel Silda</h1>
-      <BookRoom/>
+      <button
+        className={styles["modal-btn"]}
+        onClick={() => {
+          setBookingModal(true);
+        }}
+      >
+        <span className={styles["modal-btn__visible"]}>Book now</span>
+        <span className={styles["modal-btn__invisible"]}>Best rooms!</span>
+      </button>
+      {bookingModal && <BookRoom closeModal={setBookingModal} />}
     </header>
   );
 }
