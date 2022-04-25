@@ -14,7 +14,7 @@
   background-position: center;
 
   display: grid;
-  grid-template-columns: minmax(15rem,80rem) 1fr;
+  grid-template-columns: minmax(15rem, 80rem) 1fr;
   grid-template-rows: repeat(2, 1fr);
 }
 
@@ -23,7 +23,7 @@
   justify-self: end;
   padding: 2rem;
   position: relative;
-  transition: all .2s;
+  transition: all 0.2s;
 
   &__img-btn {
     border: none;
@@ -45,7 +45,7 @@
     background-color: #fff;
     padding: 0.5rem;
     width: 13rem;
-    height: 20rem;
+    max-height: 20rem;
     margin-top: -3.8rem;
 
     display: flex;
@@ -54,30 +54,33 @@
 
     h5 {
       text-align: center;
+      word-wrap: break-word;
       color: $color-grey-dark-1;
       border-bottom: 1px solid $color-grey-dark-2;
+      line-height: 1;
     }
 
-    button {
-      border: none;
-      background: none;
-      font-size: 1.5rem;
-      padding-bottom: .3rem;
+    &-link {
+      text-decoration: none;
+      text-align: center;
+      font-size: 2rem;
+      color: currentColor;
+      padding-bottom: 0.3rem;
       border-bottom: 1px solid $color-grey-dark-3;
       cursor: pointer;
     }
 
-    button:hover{
-      background-color: $color-grey-dark-2;
-      transform: translateY(-.2rem);
+    &-link:hover {
+      color: $color-primary;
+      transform: translateY(-0.2rem);
     }
   }
 }
 
 //Title part
-.title{
+.title {
   color: $color-grey-light-1;
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   font-size: 12rem;
   margin-top: -11rem;
   margin-right: -13rem;
