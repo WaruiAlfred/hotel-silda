@@ -4,11 +4,10 @@ import "./App.scss";
 import HomePage from "./pages/HomePage";
 import AuthPage from "./pages/AuthPage";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { authActions } from "./store/slices/authSlice";
 
 function App() {
-  const user = useSelector((state) => state.auth.user);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -42,7 +41,6 @@ function App() {
       getCurrentUser();
     };
   }, [dispatch]);
-  console.log(user);
 
   return (
     <Routes>
