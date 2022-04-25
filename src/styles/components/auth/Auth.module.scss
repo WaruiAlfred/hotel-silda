@@ -1,0 +1,66 @@
+@import "../../abstracts/variables";
+
+.auth {
+  background-color: #fff;
+  color:$color-grey-dark-1;
+  max-width: 50rem;
+  margin: 5rem auto;
+  padding: 3rem;
+  // transform: translateY(50%);
+  border-radius: 1rem;
+  box-shadow: 0 2rem 3rem $color-grey-light-3;
+
+  &__header {
+    text-align: center;
+    text-shadow: 0 2px #000;
+
+    &::before,
+    &::after{
+      content: '~';
+    }
+  }
+
+  &__input {
+    display: flex;
+    flex-flow: column;
+
+    label{
+      font-style: italic;
+    }
+
+    input{
+      border-radius: 1.5rem;
+      padding: .8rem;
+      color: $color-grey-dark-2;
+      outline: 1px solid $color-grey-dark-2;
+      border: none;
+    }
+  }
+
+  &__button {
+    border-radius: 3rem;
+    padding: 1rem;
+    width: 20rem;
+    transform: translateX(50%);
+    cursor: pointer;
+
+    &:hover{
+      border: 1px solid $color-primary;
+      background-color: $color-primary-light;
+    }
+  }
+
+  &__form-link {
+    text-align: end;
+    color: $color-primary;
+    font-size: 2rem;
+    cursor: pointer;
+  }
+}
+
+.logo {
+  transform: translateX(50%);
+  width: 20rem;
+  height: 20rem;
+  object-fit: contain;
+}
