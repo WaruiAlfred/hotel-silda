@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import styles from "../../styles/components/header/BookRoom.module.scss";
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
@@ -6,6 +7,7 @@ import { SelectInput } from "../helper-components/FormikFormInputs";
 import DatePickerField from "../helper-components/DatePickerField";
 
 function BookRoom({ closeModal }) {
+  const navigate = useNavigate();
   return (
     <div className={styles.popup}>
       <div className={styles["popup__container"]}>
@@ -30,25 +32,23 @@ function BookRoom({ closeModal }) {
             }}
             validationSchema={Yup.object({
               roomType: Yup.string().required("Number of rooms is required"),
-              startDate: Yup.date()
-                .min(new Date(), "Choose a future date")
-                .required("Date is required"),
-              endDate: Yup.date()
-                .min(
-                  Yup.ref("startDate"),
-                  "End date has to be greater than Start Date"
-                )
-                .required("Date is required"),
+              startDate: Yup.date().required(),
+              endDate: Yup.date().required(),
             })}
             onSubmit={(values, { setSubmitting }) => {
               setTimeout(() => {
-                console.log(values);
+                console.log("submitted", values);
+                navigate("/");
                 setSubmitting(false);
               }, 100);
             }}
           >
             <Form className={styles["popup__form"]}>
-              <SelectInput className={styles["popup__form-select"]} label="Room Type" name="roomType">
+              <SelectInput
+                className={styles["popup__form-select"]}
+                label="Room Type"
+                name="roomType"
+              >
                 <option value="single">Single</option>
                 <option value="double">Double</option>
                 <option value="quad">Quad</option>

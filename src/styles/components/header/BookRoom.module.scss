@@ -24,7 +24,7 @@
   align-items: center;
 
   &__container {
-    max-width: 50rem;
+    width: 50rem;
     max-height: 100%;
     border-radius: 1rem;
     background-color: #fff;
@@ -55,7 +55,7 @@
   }
 
   &__body {
-    flex: 0 0 50%;
+    flex: 0 0 80%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -69,12 +69,14 @@
     justify-content: space-between;
 
     color: currentColor;
+    width: 100%;
 
     input,
     &-select {
       padding: 0.3rem 0.5rem;
       border-radius: 0.7rem;
       height: 3rem;
+      width: 100%;
     }
 
     &-select {
@@ -88,34 +90,44 @@
     }
 
     &-select label,
-    &-date h3{
+    &-date h3 {
       text-align: left;
       font-size: 2rem;
       font-weight: 400;
-      color:#000;
+      color: #000;
     }
 
     &-select label::after,
-    &-date h3::after{
-      content: ':';
+    &-date h3::after {
+      content: ":";
     }
 
-    button{
+    button[type="submit"] {
       @extend %button;
       background-color: $color-primary;
-      align-self: center;
+      align-self: start;
+      margin-top: 2rem;
+
+      &:hover {
+        background-color: lighten($color-primary, 6%);
+      }
     }
   }
 
   &__footer {
     flex: 20%;
     display: flex;
-    justify-content: center;
+    justify-content: end;
     align-items: center;
 
     button {
       @extend %button;
       background-color: rgb(231, 56, 56);
+      margin-top: -5.3rem;
+
+      &:hover {
+        background-color: lighten(rgb(231, 56, 56), 5%);
+      }
     }
   }
 }
