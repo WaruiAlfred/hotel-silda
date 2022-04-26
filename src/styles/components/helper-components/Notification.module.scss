@@ -1,0 +1,35 @@
+@import "../../abstracts/variables";
+
+.notification {
+  width: 100%;
+  height: 5rem;
+  padding: 0 0.8rem;
+  margin-bottom: .2rem;
+  background-image: linear-gradient(
+    to bottom,
+    $color-primary-light,
+    $color-primary
+  );
+  border-top: 1px solid $color-primary-dark;
+  border-bottom: 1px solid $color-primary-dark;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__content {
+    color: #fff;
+    font-style: italic;
+    font-size: 2rem;
+  }
+
+  &__cancel-btn {
+    border: none;
+    background-color: transparent;
+    font-size: 3rem;
+    font-weight: bold;
+    color: $color-primary-dark;
+    cursor: pointer;
+    z-index: 30;
+  }
+}
