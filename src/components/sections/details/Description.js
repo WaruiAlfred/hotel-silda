@@ -4,7 +4,7 @@ import user3 from "../../../assets/img/user-3.jpg";
 import user4 from "../../../assets/img/user-4.jpg";
 import user5 from "../../../assets/img/user-5.jpg";
 import user6 from "../../../assets/img/user-6.jpg";
-import UseSvg from '../../helper-components/UseSvg';
+import UseSvg from "../../helper-components/UseSvg";
 
 function Description() {
   return (
@@ -16,12 +16,19 @@ function Description() {
             {Array(5)
               .fill()
               .map((_) => (
-                <UseSvg className={styles["hotel__star"]} iconName="star" />
+                <UseSvg
+                  key={Math.random()}
+                  className={styles["hotel__star"]}
+                  iconName="star"
+                />
               ))}
           </div>
         </div>
-        <div className={styles['hotel-location']}>
-          <UseSvg className={styles["hotel-location-icon"]} iconName="location-pin" />
+        <div className={styles["hotel-location"]}>
+          <UseSvg
+            className={styles["hotel-location-icon"]}
+            iconName="location-pin"
+          />
           Mombasa,Kenya
         </div>
       </div>
