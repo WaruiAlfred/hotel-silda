@@ -47,8 +47,8 @@ function BookRoom({ closeModal }) {
               }, 100);
             }}
           >
-            <Form>
-              <SelectInput label="Room Type" name="roomType">
+            <Form className={styles["popup__form"]}>
+              <SelectInput className={styles["popup__form-select"]} label="Room Type" name="roomType">
                 <option value="single">Single</option>
                 <option value="double">Double</option>
                 <option value="quad">Quad</option>
@@ -56,11 +56,11 @@ function BookRoom({ closeModal }) {
                 <option value="king">King</option>
               </SelectInput>
 
-              <div>
+              <div className={styles["popup__form-date"]}>
                 <h3>Start Date</h3>
                 <DatePickerField name="startDate" />
               </div>
-              <div>
+              <div className={styles["popup__form-date"]}>
                 <h3>End Date</h3>
                 <DatePickerField name="endDate" />
               </div>
