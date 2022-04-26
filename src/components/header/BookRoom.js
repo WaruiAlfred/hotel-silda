@@ -1,16 +1,41 @@
-import React from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useState } from "react";
 import styles from "../../styles/components/header/BookRoom.module.scss";
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
 import { SelectInput } from "../helper-components/FormikFormInputs";
 import DatePickerField from "../helper-components/DatePickerField";
+import Notification from "../helper-components/Notification";
 
 function BookRoom({ closeModal }) {
-  const navigate = useNavigate();
+  const [formValues, setFormValues] = useState(null);
+
+  let roomType, startDate, endDate;
+  if (formValues) {
+    roomType = formValues.roomType;
+    startDate = formValues.startDate;
+    endDate = formValues.endDate;
+  }
+
+  const convertDate = (enteredDate) => {
+    const date = new Date(enteredDate),
+      month = ("0" + (date.getMonth() + 1)).slice(-2),
+      day = ("0" + date.getDate()).slice(-2);
+    return [day, month, date.getFullYear()].join("-");
+  };
+
   return (
     <div className={styles.popup}>
       <div className={styles["popup__container"]}>
+        {!!formValues && (
+          <Notification
+            className={styles["popup__notification"]}
+            content={`You have booked a ${roomType} room(s) from ${convertDate(
+              startDate
+            )} to ${convertDate(endDate)} -> (${Math.ceil(
+              Math.abs(endDate - startDate) / (1000 * 3600 * 24)
+            )} days)`}
+          />
+        )}
         <div className={styles["popup__close-btn"]}>
           <button
             onClick={() => {
@@ -32,13 +57,14 @@ function BookRoom({ closeModal }) {
             }}
             validationSchema={Yup.object({
               roomType: Yup.string().required("Number of rooms is required"),
+              //TODO:Correctly validate date
               startDate: Yup.date().required(),
               endDate: Yup.date().required(),
             })}
             onSubmit={(values, { setSubmitting }) => {
               setTimeout(() => {
                 console.log("submitted", values);
-                navigate("/");
+                setFormValues(values);
                 setSubmitting(false);
               }, 100);
             }}

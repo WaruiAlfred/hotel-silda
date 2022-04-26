@@ -23,6 +23,12 @@
   justify-content: center;
   align-items: center;
 
+  &__notification {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
   &__container {
     width: 50rem;
     max-height: 100%;
@@ -117,7 +123,7 @@
   &__footer {
     flex: 20%;
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
     align-items: center;
 
     button {

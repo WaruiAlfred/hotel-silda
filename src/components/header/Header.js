@@ -6,12 +6,10 @@ import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { getAuth, signOut } from "firebase/auth";
 import BookRoom from "./BookRoom";
-import Notification from "../helper-components/Notification";
 
 function Header() {
   const [userMenuVisibility, setUserMenuVisibility] = useState(false);
   const [bookingModal, setBookingModal] = useState(false);
-  const [showNotification, setShowNotification] = useState(false);
   const user = useSelector((state) => state.auth.user);
 
   const userMenuHandler = () => {
@@ -50,13 +48,6 @@ function Header() {
 
   return (
     <header className={styles.header}>
-      {/*{showNotification && (
-        <Notification
-          className={styles["header__notification"]}
-          content="Test data"
-          onClick={setShowNotification}
-        />
-      )}*/}
       <nav>
         <img src={logo} alt="Logo" />
       </nav>
