@@ -12,14 +12,29 @@
     url("../../../assets/img/hs-front.jpg");
   background-size: cover;
   background-position: center;
+  position: relative;
 
   display: grid;
   grid-template-columns: minmax(15rem, 80rem) 1fr;
   grid-template-rows: repeat(2, 1fr);
+
+  &__notification {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  nav {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+  }
 }
 
 // User part
 .user {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+
   justify-self: end;
   padding: 2rem;
   position: relative;
