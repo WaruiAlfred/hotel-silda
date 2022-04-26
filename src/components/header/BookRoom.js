@@ -1,14 +1,13 @@
 import React from "react";
 import styles from "../../styles/components/header/BookRoom.module.scss";
+import { Formik, Form } from "formik";
+import * as Yup from "yup";
+import { SelectInput } from "../helper-components/FormikFormInputs";
+import DatePickerField from "../helper-components/DatePickerField";
 
 function BookRoom({ closeModal }) {
   return (
-    <div
-      className={styles.popup}
-      onClick={() => {
-        closeModal(false);
-      }}
-    >
+    <div className={styles.popup}>
       <div className={styles["popup__container"]}>
         <div className={styles["popup__close-btn"]}>
           <button
@@ -20,10 +19,55 @@ function BookRoom({ closeModal }) {
           </button>
         </div>
         <div className={styles["popup__title"]}>
-          <h1>Book a Room</h1>
+          <h3>Book a Room</h3>
         </div>
         <div className={styles["popup__body"]}>
-          <p>4 rooms left</p>
+          <Formik
+            initialValues={{
+              roomType: "",
+              startDate: "",
+              endDate: "",
+            }}
+            validationSchema={Yup.object({
+              roomType: Yup.string().required("Number of rooms is required"),
+              startDate: Yup.date()
+                .min(new Date(), "Choose a future date")
+                .required("Date is required"),
+              endDate: Yup.date()
+                .min(
+                  Yup.ref("startDate"),
+                  "End date has to be greater than Start Date"
+                )
+                .required("Date is required"),
+            })}
+            onSubmit={(values, { setSubmitting }) => {
+              setTimeout(() => {
+                console.log(values);
+                setSubmitting(false);
+              }, 100);
+            }}
+          >
+            <Form>
+              <SelectInput label="Room Type" name="roomType">
+                <option value="single">Single</option>
+                <option value="double">Double</option>
+                <option value="quad">Quad</option>
+                <option value="twin">Twin</option>
+                <option value="king">King</option>
+              </SelectInput>
+
+              <div>
+                <h3>Start Date</h3>
+                <DatePickerField name="startDate" />
+              </div>
+              <div>
+                <h3>End Date</h3>
+                <DatePickerField name="endDate" />
+              </div>
+
+              <button type="submit">Book</button>
+            </Form>
+          </Formik>
         </div>
         <div className={styles["popup__footer"]}>
           <button
