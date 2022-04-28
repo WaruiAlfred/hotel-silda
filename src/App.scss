@@ -1,23 +1,32 @@
-@import './styles/abstracts/variables';
+@import "./styles/abstracts/variables";
+@import "./styles/abstracts/mixins";
 
-*{
+* {
   margin: 0;
   padding: 0;
 }
 
 *,
 *::before,
-*::after{
+*::after {
   box-sizing: inherit;
 }
 
-html{
+html {
   box-sizing: border-box;
   font-size: 62.5%;
+
+  @include adjust(tab-port) {
+    font-size: 50%;
+  }
+
+  @include adjust(tab-port-min) {
+    font-size: 45%;
+  }
 }
 
-body{
-  font-family: 'PT Sans Narrow', sans-serif;
+body {
+  font-family: "PT Sans Narrow", sans-serif;
   font-weight: 400;
   line-height: 1.6;
   color: $color-grey-dark-2;

@@ -1,4 +1,5 @@
 @import "../../abstracts/variables";
+@import "../../abstracts/mixins";
 
 .header {
   grid-column: 1 / -1;
@@ -21,6 +22,31 @@
   nav {
     grid-column: 1 / 2;
     grid-row: 1 / 2;
+
+    img {
+      @include adjust(tab-port-min) {
+        height: 25rem;
+      }
+    }
+  }
+
+  &__content {
+    grid-row: 2 / 3;
+    justify-self: end;
+    transform: translate(15rem, -10rem);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include adjust(tab-land) {
+      transform: translate(1rem, -10rem);
+    }
+
+    @include adjust(phone) {
+      transform: translate(7rem, -10rem);
+    }
+
   }
 }
 
@@ -88,24 +114,24 @@
 
 //Title part
 .title {
-  grid-column: 1 / 2;
-  grid-row: 2 / 3;
   color: $color-grey-light-1;
   font-family: "Playfair Display", serif;
   font-size: 12rem;
-  margin-top: -11rem;
-  margin-right: -13rem;
   text-shadow: 6px 5px #558abb;
   justify-self: end;
+
+
+  @media only screen and (max-width:33.75em){//540px
+    font-size: 10rem;
+  }
+
+  @media only screen and (max-width:29.38em){//540px
+    font-size: 8rem;
+    text-align: center;
+  }
 }
 
 .modal-btn {
-  grid-column: 1 / 2;
-  grid-row: 2 / 3;
-  justify-self: end;
-  align-self: center;
-
-  margin-right: 1rem;
   height: 5rem;
   width: 30rem;
   text-transform: uppercase;
