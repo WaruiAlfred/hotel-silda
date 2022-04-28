@@ -62,27 +62,31 @@ function Header() {
           </div>
         )}
       </div>
-      <h1 className={styles.title}>Hotel Silda</h1>
+      <div className={styles['header__content']}>
+        <h1 className={styles.title}>Hotel Silda</h1>
 
-      {/*
+        {/*
       TODO:
         work on disabling the button if user is not logged in
       */}
-      <button
-        className={styles["modal-btn"]}
-        onClick={() => {
-          setBookingModal(true);
-        }}
-      >
-        {user ? (
-          <Fragment>
-            <span className={styles["modal-btn__visible"]}>Book now</span>
-            <span className={styles["modal-btn__invisible"]}>Best rooms!</span>
-          </Fragment>
-        ) : (
-          <span style={{ padding: "15px" }}>Login to book rooms</span>
-        )}
-      </button>
+        <button
+          className={styles["modal-btn"]}
+          onClick={() => {
+            setBookingModal(true);
+          }}
+        >
+          {user ? (
+            <Fragment>
+              <span className={styles["modal-btn__visible"]}>Book now</span>
+              <span className={styles["modal-btn__invisible"]}>
+                Best rooms!
+              </span>
+            </Fragment>
+          ) : (
+            <span style={{ padding: "15px" }}>Login to book rooms</span>
+          )}
+        </button>
+      </div>
       {bookingModal && <BookRoom closeModal={setBookingModal} />}
     </header>
   );
