@@ -10,7 +10,7 @@
       rgba($color-primary-light, 0.5),
       rgba($color-primary-light, 0.5)
     ),
-    url("../../../assets/img/hs-front.jpg");
+    url("../../../assets/img/hs-front-min.jpg");
   background-size: cover;
   background-position: center;
   position: relative;
@@ -19,11 +19,22 @@
   grid-template-columns: minmax(15rem, 80rem) 1fr;
   grid-template-rows: repeat(2, 1fr);
 
+  @media (min-resolution: 192dpi) and (min-width: 37.5em), (min-width:125em){
+    background-image: linear-gradient(
+      to right,
+      rgba($color-primary-light, 0.5),
+      rgba($color-primary-light, 0.5)
+    ),
+    url("../../../assets/img/hs-front.jpg");
+  }
+
   nav {
     grid-column: 1 / 2;
     grid-row: 1 / 2;
 
     img {
+      width: 20rem;
+      height: 20rem;
       @include adjust(tab-port-min) {
         height: 25rem;
       }
@@ -46,7 +57,6 @@
     @include adjust(phone) {
       transform: translate(7rem, -10rem);
     }
-
   }
 }
 
@@ -120,12 +130,13 @@
   text-shadow: 6px 5px #558abb;
   justify-self: end;
 
-
-  @media only screen and (max-width:33.75em){//540px
+  @media only screen and (max-width: 33.75em) {
+    //540px
     font-size: 10rem;
   }
 
-  @media only screen and (max-width:29.38em){//540px
+  @media only screen and (max-width: 29.38em) {
+    //540px
     font-size: 8rem;
     text-align: center;
   }

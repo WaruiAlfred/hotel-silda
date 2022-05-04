@@ -1,6 +1,7 @@
 import React, { Fragment, useState } from "react";
 import styles from "../../styles/components/header/Header.module.scss";
 import logo from "../../assets/img/logo.png";
+import logoMin from "../../assets/img/logo-min.png";
 import UseSvg from "../helper-components/UseSvg";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
@@ -49,7 +50,7 @@ function Header() {
   return (
     <header className={styles.header}>
       <nav>
-        <img src={logo} alt="Logo" />
+        <img srcset={`${logoMin} 1x, ${logo} 2x`} src={logo} alt="Logo" />
       </nav>
       <div className={styles.user}>
         <button className={styles["user__img-btn"]} onClick={userMenuHandler}>
@@ -62,7 +63,7 @@ function Header() {
           </div>
         )}
       </div>
-      <div className={styles['header__content']}>
+      <div className={styles["header__content"]}>
         <h1 className={styles.title}>Hotel Silda</h1>
 
         {/*

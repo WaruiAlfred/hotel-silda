@@ -1,10 +1,14 @@
 import React from "react";
+import UseSvg from "../../helper-components/UseSvg";
 import styles from "../../../styles/components/sections/details/Description.module.scss";
 import user3 from "../../../assets/img/user-3.jpg";
 import user4 from "../../../assets/img/user-4.jpg";
 import user5 from "../../../assets/img/user-5.jpg";
 import user6 from "../../../assets/img/user-6.jpg";
-import UseSvg from "../../helper-components/UseSvg";
+import user3Min from "../../../assets/img/user-3-min.jpg";
+import user4Min from "../../../assets/img/user-4-min.jpg";
+import user5Min from "../../../assets/img/user-5-min.jpg";
+import user6Min from "../../../assets/img/user-6-min.jpg";
 
 function Description() {
   return (
@@ -61,21 +65,25 @@ function Description() {
         </p>
         <div className={styles["recommend__friends"]}>
           <img
+            srcset={`${user3Min} 1x, ${user3} 2x`}
             src={user3}
             alt="Friend 1"
             className={styles["recommend__photo"]}
           />
           <img
+            srcset={`${user4Min} 1x, ${user4} 2x`}
             src={user4}
             alt="Friend 2"
             className={styles["recommend__photo"]}
           />
           <img
+            srcset={`${user5Min} 1x, ${user5} 2x`}
             src={user5}
             alt="Friend 3"
             className={styles["recommend__photo"]}
           />
           <img
+            srcset={`${user6Min} 1x, ${user6} 2x`}
             src={user6}
             alt="Friend 4"
             className={styles["recommend__photo"]}
