@@ -19,13 +19,13 @@
   grid-template-columns: minmax(15rem, 80rem) 1fr;
   grid-template-rows: repeat(2, 1fr);
 
-  @media (min-resolution: 192dpi) and (min-width: 37.5em), (min-width:125em){
+  @media (min-resolution: 192dpi) and (min-width: 37.5em), (min-width: 125em) {
     background-image: linear-gradient(
-      to right,
-      rgba($color-primary-light, 0.5),
-      rgba($color-primary-light, 0.5)
-    ),
-    url("../../../assets/img/hs-front.jpg");
+        to right,
+        rgba($color-primary-light, 0.5),
+        rgba($color-primary-light, 0.5)
+      ),
+      url("../../../assets/img/hs-front.jpg");
   }
 
   nav {
@@ -43,8 +43,8 @@
 
   &__content {
     grid-row: 2 / 3;
-    justify-self: end;
-    transform: translate(15rem, -10rem);
+    justify-self: center;
+    transform: translate(25rem, -10rem);
 
     display: flex;
     flex-direction: column;
@@ -56,6 +56,10 @@
 
     @include adjust(phone) {
       transform: translate(7rem, -10rem);
+    }
+
+    @media only screen and (min-width: 90em) {
+      transform: translate(53rem, -10rem);
     }
   }
 }
