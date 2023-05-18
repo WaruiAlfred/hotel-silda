@@ -43,24 +43,13 @@
 
   &__content {
     grid-row: 2 / 3;
-    justify-self: center;
-    transform: translate(25rem, -10rem);
+    grid-column: 1 / -1;
+    margin-top: -10rem;
 
     display: flex;
     flex-direction: column;
     align-items: center;
-
-    @include adjust(tab-land) {
-      transform: translate(1rem, -10rem);
-    }
-
-    @include adjust(phone) {
-      transform: translate(7rem, -10rem);
-    }
-
-    @media only screen and (min-width: 90em) {
-      transform: translate(53rem, -10rem);
-    }
+    justify-content: flex-start;
   }
 }
 
